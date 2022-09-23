@@ -1,0 +1,16 @@
+.sortButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-dark-gray);
+  font-size: 1rem;
+}
+
+.sortButton .sortIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
