@@ -1,16 +1,18 @@
 /**
  * @type {import('next').NextConfig}
  */
- const isProd = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    loader: 'akamai',
-    path: '',
+    unoptimized: true
   },
+<<<<<<< Updated upstream
   assetPrefix: isProd ? './' : undefined,
+=======
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
+>>>>>>> Stashed changes
 }
 
 module.exports = nextConfig
