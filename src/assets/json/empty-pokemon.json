@@ -1,0 +1,64 @@
+{
+  "abilities": [
+    {
+      "ability": {
+        "name": "Ability 1"
+      }
+    },
+    {
+      "ability": {
+        "name": "Ability 2"
+      }
+    }
+  ],
+  "height": 99,
+  "id": "default-1",
+  "name": "Pokémon Name",
+  "stats": [
+    {
+      "base_stat": 45,
+      "stat": {
+        "name": "hp"
+      }
+    },
+    {
+      "base_stat": 49,
+      "stat": {
+        "name": "attack"
+      }
+    },
+    {
+      "base_stat": 49,
+      "stat": {
+        "name": "defense"
+      }
+    },
+    {
+      "base_stat": 65,
+      "stat": {
+        "name": "special-attack"
+      }
+    },
+    {
+      "base_stat": 65,
+      "stat": {
+        "name": "special-defense"
+      }
+    },
+    {
+      "base_stat": 45,
+      "stat": {
+        "name": "speed"
+      }
+    }
+  ],
+  "types": [
+    {
+      "type": {
+        "name": "type"
+      }
+    }
+  ],
+  "weight": 99,
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis eros vitae tellus condimentum maximus sit amet in eros."
+}

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from './Image'
 import styles from '../styles/components/Logo.module.css'
 import POKEBALL from '../assets/img/pokeball.png'
 

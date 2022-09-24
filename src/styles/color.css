@@ -20,6 +20,7 @@
   --color-dark-gray: #212121;
   --color-medium-gray: #666666;
   --color-light-gray: #E0E0E0;
+  --color-wireframe: #B8B8B8;
   --color-white: #FFFFFF;
   --color-background: #F7F7F7;
 }
@@ -94,4 +95,8 @@
 
 .dragon {
   --color-poke: var(--color-poke-type-dragon);
+}
+
+.type {
+  --color-poke: var(--color-wireframe);
 }

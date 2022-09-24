@@ -23,6 +23,11 @@
   margin: 5px;
 }
 
+.pokeCard .loading {
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}
+
 .pokeCard .nameContainer {
   width: 100%;
   display: flex;
@@ -45,5 +50,14 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
   }
 }

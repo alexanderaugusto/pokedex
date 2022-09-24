@@ -1,3 +1,5 @@
+import EMPTY_POKEMON from '../assets/json/empty-pokemon.json'
+
 function fillZeroInFront(num, length) {
   return (Array(length).join('0') + num).slice(-length)
 }
@@ -31,13 +33,22 @@ function calculatePercentage(value, total) {
   return (value / total) * 100
 }
 
+function createDefaultPokemons() {
+  const pokemons = []
+  for (let i = 1; i <= 151; i++) {
+    pokemons.push({ ...EMPTY_POKEMON, id: `default-${i + 1}` })
+  }
+  return pokemons
+}
+
 const helper = {
   fillZeroInFront,
   makeFirstLetterUpperCase,
   formatPokeWeight,
   formatPokeHeight,
   mapStatsTitle,
-  calculatePercentage
+  calculatePercentage,
+  createDefaultPokemons
 }
 
 export default helper

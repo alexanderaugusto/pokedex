@@ -1,3 +1,5 @@
+import EMPTY_POKEMON from '../assets/img/poke-empty.png'
+
 const BASE_URL = 'https://pokeapi.co/api/v2'
 const BASE_IMAGE_URL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork'
 
@@ -26,7 +28,7 @@ async function getPokemonFireredDescription(id) {
 }
 
 function getPokemonImage(id) {
-  return `${BASE_IMAGE_URL}/${id}.png`
+  return !id.toString().includes('default') ? `${BASE_IMAGE_URL}/${id}.png` : EMPTY_POKEMON
 }
 
 const pokemonService = {

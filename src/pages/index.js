@@ -6,11 +6,12 @@ import SearchInput from '../components/SearchInput'
 import SortButton from '../components/SortButton'
 import { usePokemon } from '../contexts/pokemon'
 import pokemonService from '../services/pokemonService'
+import helper from '../utils/helper'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
-  const [pokemons, setPokemons] = useState([])
-  const [initialPokemons, setInitialPokemons] = useState([])
+  const [pokemons, setPokemons] = useState(helper.createDefaultPokemons())
+  const [initialPokemons, setInitialPokemons] = useState(helper.createDefaultPokemons())
   const pokemonContext = usePokemon()
 
   useEffect(() => {
