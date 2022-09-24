@@ -10,4 +10,5 @@
   font-weight: 700;
   color: var(--color-dark-gray);
   margin: 0 1rem;
+  margin-top: -10px;
 }

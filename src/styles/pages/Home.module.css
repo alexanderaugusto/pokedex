@@ -16,11 +16,3 @@
   justify-content: space-between;
   width: 97%;
 }
-
-.main .actionContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
