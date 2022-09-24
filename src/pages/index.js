@@ -4,23 +4,31 @@ import Logo from '../components/Logo'
 import PokeList from '../components/PokeList'
 import SearchInput from '../components/SearchInput'
 import SortButton from '../components/SortButton'
+import { usePokemon } from '../contexts/pokemon'
 import pokemonService from '../services/pokemonService'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
   const [pokemons, setPokemons] = useState([])
   const [initialPokemons, setInitialPokemons] = useState([])
+  const pokemonContext = usePokemon()
 
   useEffect(() => {
-    pokemonService.getAllPokemons()
-      .then(pokemons => {
-        setPokemons(pokemons)
-        setInitialPokemons(pokemons)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
+    if (pokemonContext.pokemons.length === 0) {
+      pokemonService.getAllPokemons()
+        .then(pokemons => {
+          setPokemons(pokemons)
+          setInitialPokemons(pokemons)
+          pokemonContext.setPokemons(pokemons)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    } else {
+      setPokemons(pokemonContext.pokemons)
+      setInitialPokemons(pokemonContext.pokemons)
+    }
+  }, [pokemonContext])
 
   return (
     <div>
