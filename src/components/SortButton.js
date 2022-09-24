@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Icon from './Icon'
 import { faLongArrowDown } from '@fortawesome/free-solid-svg-icons'
+import Icon from './Icon'
 import styles from '../styles/components/SortButton.module.css'
 
 const ID_ORDER = 'id'

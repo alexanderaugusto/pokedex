@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import PokeDetail from '../../components/PokeDetail'
+import { usePokemon } from '../../contexts/pokemon'
 import pokemonService from '../../services/pokemonService'
 import styles from '../../styles/pages/Detail.module.css'
 
 export default function Detail() {
-  const router = useRouter()
   const [pokemon, setPokemon] = useState(null)
   const [pokemonDescription, setPokemonDescription] = useState("")
+  const router = useRouter()
+  const pokemonContext = usePokemon()
 
   useEffect(() => {
     pokemonService.getPokemonById(router.query.id)
@@ -36,7 +38,11 @@ export default function Detail() {
       </Head>
 
       <main className={styles.main}>
-        <PokeDetail pokemon={pokemon} description={pokemonDescription} />
+        <PokeDetail
+          pokemon={pokemon}
+          pokemonsSize={pokemonContext.pokemons.length > 0 ? pokemonContext.pokemons.length : 151}
+          description={pokemonDescription}
+        />
       </main>
 
       <footer className={styles.footer}>

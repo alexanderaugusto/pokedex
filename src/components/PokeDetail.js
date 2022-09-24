@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { faArrowLeft, faRulerVertical, faWeight, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import Icon from './Icon'
 import Image from './Image'
+import ProgressBar from './ProgressBar'
 import helper from '../utils/helper'
 import pokemonService from '../services/pokemonService'
 import styles from '../styles/components/PokeDetail.module.css'
 import POKEBALL_WHITE from '../assets/img/pokeball-white.png'
-import ProgressBar from './ProgressBar'
 
 export default function PokeDetail({ pokemon, pokemonsSize = 151, description }) {
   if (!pokemon) {
