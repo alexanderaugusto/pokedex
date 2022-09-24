@@ -1,0 +1,40 @@
+.progressBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.progressBar label {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-dark-gray);
+  margin-right: 1rem;
+}
+
+.progressBar .progressContainer {
+  width: 100%;
+  height: 7px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progressBar .progressContainer:after {
+  content: '';
+  position: absolute;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-poke);
+  border-radius: 10px;
+}
+
+.progressBar .progressContainer .progress {
+  background-color: var(--color-poke);
+  height: 100%;
+  border-radius: inherit;
+  position: relative;
+  z-index: 1;
+}

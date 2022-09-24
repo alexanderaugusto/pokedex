@@ -12,12 +12,27 @@ async function getAllPokemons() {
   return results
 }
 
+async function getPokemonById(id) {
+  const response = await fetch(`${BASE_URL}/pokemon/${id}`)
+  const data = await response.json()
+  return data
+}
+
+async function getPokemonFireredDescription(id) {
+  const response = await fetch(`${BASE_URL}/pokemon-species/${id}`)
+  const data = await response.json()
+  const description = data.flavor_text_entries.find((description) => description.version.name === 'firered')
+  return description.flavor_text
+}
+
 function getPokemonImage(id) {
   return `${BASE_IMAGE_URL}/${id}.png`
 }
 
 const pokemonService = {
   getAllPokemons,
+  getPokemonById,
+  getPokemonFireredDescription,
   getPokemonImage
 }
 

@@ -17,7 +17,7 @@ export default function SearchInput({ initialItems, items, changeItems }) {
           icon={faSearch}
         />
       </button>
-      <input type="text" placeholder="Procurar" onChange={handleChange} />
+      <input type="text" placeholder="Search" onChange={handleChange} />
     </div>
   )
 }
