@@ -41,7 +41,7 @@ export default function PokeDetail({ pokemon, pokemonsSize = 151, description = 
       <div className={styles.nextPokemon}>
         {pokemonData.id > 1 && (
           <div className={styles.previous}>
-            <Link href={`/detail/${pokemonData.id - 1}`}>
+            <Link href={`/detail?pokemonId=${pokemonData.id - 1}`}>
               <Icon
                 className={styles.icon}
                 icon={faChevronLeft}
@@ -51,7 +51,7 @@ export default function PokeDetail({ pokemon, pokemonsSize = 151, description = 
         )}
         {pokemonData.id < pokemonsSize && (
           <div className={styles.next}>
-            <Link href={`/detail/${pokemonData.id + 1}`}>
+            <Link href={`/detail?pokemonId=${pokemonData.id + 1}`}>
               <Icon
                 className={styles.icon}
                 icon={faChevronRight}

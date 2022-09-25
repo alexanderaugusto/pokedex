@@ -5,7 +5,7 @@ import styles from '../styles/components/PokeCard.module.css'
 
 export default function PokeCard({ id, name, image, color }) {
   return (
-    <Link href={`/detail/${id}`}>
+    <Link href={`/detail?pokemonId=${id}`}>
       <div className={`${styles.pokeCard} ${color}`}>
         <h4>{`#${helper.fillZeroInFront(id, 3)}`}</h4>
         <Image
