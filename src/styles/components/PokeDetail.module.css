@@ -229,6 +229,10 @@
   grid-template-columns: 40px 35px 1fr;
   width: 100%;
   height: 100%;
+  margin: 0;
+}
+
+.pokeDetail .statsContainer li > * {
   margin: 3px 0;
 }
 
@@ -237,6 +241,7 @@
   height: 100%;
   background-color: var(--color-light-gray);
   margin: 0 auto;
+  margin-top: -3px;
 }
 
 .pokeDetail .statsContainer li p {

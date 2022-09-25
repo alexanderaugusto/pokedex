@@ -13,21 +13,30 @@ export default function Detail() {
   const pokemonContext = usePokemon()
 
   useEffect(() => {
-    pokemonService.getPokemonById(router.query.id)
-      .then(pokemon => {
-        setPokemon(pokemon)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    pokemonService.getPokemonFireredDescription(router.query.id)
+    const { id: pokemonId } = router.query
+
+    const pokemon = pokemonContext.pokemons.find(pokemon => pokemon.id === pokemonId)
+
+    if (pokemon) {
+      setPokemon(pokemon)
+    } else {
+      pokemonService.getPokemonById(pokemonId)
+        .then(pokemon => {
+          setPokemon(pokemon)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
+    pokemonService.getPokemonFireredDescription(pokemonId)
       .then(pokeDescription => {
         setPokemonDescription(pokeDescription)
       })
       .catch(err => {
         console.log(err)
       })
-  }, [router.query.id])
+  }, [router.query, pokemonContext.pokemons])
 
   return (
     <div>
